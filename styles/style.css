@@ -11,23 +11,22 @@
 /*управление меню*/
 .header__menu-list {
     display: flex;
-    margin: 4px 0 0 26px;
+    gap: 30px;
+    margin: 4px 0 0 23px;
 }
 
 .header__menu-list .header__menu-item_no-bullit {
     list-style: none;
 }
 
-.header__menu-item-1 .header__menu-link_active {
+.header__menu-item_no-bullit .header__menu-link_active {
     text-decoration: none;
 }
 
-.header__menu-item-2,
-.header__menu-item-3
+.header__menu-item
  {
     list-style: circle;
     text-indent: 4px;
-    margin-left: 30px;
 }
 
 /*управление логотипом*/
@@ -52,26 +51,32 @@
 
 /*Управление картинкой + альфапокрытием*/
 .cover {
+    padding: 165px 50px 50px 50px;
     background-image: url(../images/lotus-flower.jpg);
     background-size: cover;
-    height: 757px;
+    background-position: center;
+    min-height: 757px;
     color: white;
+    position: relative;
 }
 
-.cover__color {
-    padding: 165px 50px 50px 50px;
-    width: 100%;
-    height: 100%;
+.overlay {
+    position: absolute;
+    inset: 0;
 	background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
 }
 
 /*Управление заголовоком*/
 .cover__title {
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-transform: uppercase;
+    position: relative;
     letter-spacing: 10px;
     font-size: 100px;
     letter-spacing: 0.3em;
+    z-index: 2;
 }
 
 .cover__title-text {
@@ -80,19 +85,16 @@
 
 .cover__title-text-left {
     line-height: 1.15;
-    background-color: rgba(255, 0, 0, 0.0);
 }
 
 .cover__title-text-center {
     margin: 20px 0 0 286px;
     line-height: 1;
-    background-color: rgba(255, 196, 0, 0.0);
 }
 
 .cover__title-text-right {
     margin: 20px 0 0 583px;
     line-height: 1;
-    background-color: rgba(0, 4, 255, 0.0);
 }
 
 .cover__title-text_spacing {
@@ -107,11 +109,13 @@
 .cover__description {
     display: flex;
 	margin-top: 135px;
+    position: relative;
 	align-items: center;
 	justify-content: end;
 	font-size: 22px;
 	text-transform: uppercase;
 	word-spacing: 18px;
+    z-index: 2;
 }
 
 .cover__description-text {
@@ -157,7 +161,7 @@
 .lots__card-list-item {
     flex-grow: 1;
     width: 334px;
-	height: 563px;
+	min-height: 563px;
 }
 
 .card-link {
@@ -168,11 +172,12 @@
     display: flex;
 	height: 100%;
 	justify-content: space-between;
+    padding: 51px 40px 48px 40px;
 	flex-direction: column;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-    
+    position: relative;
 }
 
 .card_type_film {
@@ -204,12 +209,14 @@
     line-height: 26px;
 	text-decoration-line: underline;
 	text-transform: uppercase;
+    z-index: 2;
 }
 
 .card__text {
 	color: white;
 	font-size: 20px;
     line-height: 24px;
+    z-index: 2;
 }
 
 .card__title-text_spacing {
